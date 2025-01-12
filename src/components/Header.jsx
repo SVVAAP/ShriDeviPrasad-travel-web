@@ -1,157 +1,120 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React from "react";
+import { Link } from "react-router-dom";
 
-function Header() {
+const Navbar = () => {
   return (
-    <div>
-         {/* Spinner Start */}
-    {/* <div
-      id="spinner"
-      className="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center"
-    >
-      <div
-        className="spinner-border text-primary"
-        style={{ width: "3rem", height: "3rem" }}
-        role="status"
-      >
-        <span className="sr-only">Loading...</span>
-      </div>
-    </div> */}
-    {/* Spinner End */}
+    <nav className="bg-white shadow-md fixed w-full z-10">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between h-16">
+          {/* Logo */}
+          <div className="flex-shrink-0">
+            <Link to="/" className="text-2xl font-bold text-blue-600">
+              ShriDeviPrasad
+            </Link>
+          </div>
 
-    {/* Topbar Start */}
-    <div className="container-fluid bg-dark px-5 d-none d-lg-block">
-      <div className="row gx-0">
-        <div className="col-lg-8 text-center text-lg-start mb-2 mb-lg-0">
-          <div
-            className="d-inline-flex align-items-center"
-            style={{ height: 45 }}
-          >
-            <small className="me-3 text-light">
-              <i className="fa fa-map-marker-alt me-2" />
-              123 Street, New York, USA
-            </small>
-            <small className="me-3 text-light">
-              <i className="fa fa-phone-alt me-2" />
-              +012 345 6789
-            </small>
-            <small className="text-light">
-              <i className="fa fa-envelope-open me-2" />
-              info@example.com
-            </small>
-          </div>
-        </div>
-        <div className="col-lg-4 text-center text-lg-end">
-          <div
-            className="d-inline-flex align-items-center"
-            style={{ height: 45 }}
-          >
-            <a
-              className="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2"
-              to=""
+          {/* Menu Links */}
+          <div className="hidden md:flex space-x-6">
+            <Link
+              to="/"
+              className="text-gray-600 hover:text-blue-600 transition duration-200"
             >
-              <i className="fab fa-twitter fw-normal" />
-            </a>
-            <a
-              className="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2"
-              to=""
-            >
-              <i className="fab fa-facebook-f fw-normal" />
-            </a>
-            <a
-              className="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2"
-              to=""
-            >
-              <i className="fab fa-linkedin-in fw-normal" />
-            </a>
-            <a
-              className="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2"
-              to=""
-            >
-              <i className="fab fa-instagram fw-normal" />
-            </a>
-            <a
-              className="btn btn-sm btn-outline-light btn-sm-square rounded-circle"
-              to=""
-            >
-              <i className="fab fa-youtube fw-normal" />
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-    {/* Topbar End */}
-    {/* Navbar & Hero Start */}
-    <div className="container-fluid position-relative p-0">
-      <nav className="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0">
-        <Link to="/" className="navbar-brand p-0">
-          <h1 className="text-primary m-0">
-            <i className="fa fa-map-marker-alt me-3" />
-            Tourist
-          </h1>
-          {/* <img src="img/logo.png" alt="Logo"> */}
-        </Link>
-        <button
-          className="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarCollapse"
-        >
-          <span className="fa fa-bars" />
-        </button>
-        <div className="collapse navbar-collapse" id="navbarCollapse">
-          <div className="navbar-nav ms-auto py-0">
-            <Link to="/" className="nav-item nav-link">
               Home
             </Link>
-            <Link to="/About" className="nav-item nav-link">
+            <Link
+              to="/about"
+              className="text-gray-600 hover:text-blue-600 transition duration-200"
+            >
               About
             </Link>
-            <Link to="/Services" className="nav-item nav-link">
+            <Link
+              to="/services"
+              className="text-gray-600 hover:text-blue-600 transition duration-200"
+            >
               Services
             </Link>
-            <Link to="/Packages" className="nav-item nav-link">
+            <Link
+              to="/packages"
+              className="text-gray-600 hover:text-blue-600 transition duration-200"
+            >
               Packages
             </Link>
-            <div className="nav-item dropdown">
-              <Link
-                to="#"
-                className="nav-link dropdown-toggle"
-                data-bs-toggle="dropdown"
-              >
-                Pages
-              </Link>
-              <div className="dropdown-menu m-0">
-                <Link to="/Destination" className="dropdown-item">
-                  Destination
-                </Link>
-                <Link to="/Booking" className="dropdown-item">
-                  Booking
-                </Link>
-                <Link to="/Team" className="dropdown-item">
-                  Travel Guides
-                </Link>
-                <Link to="/Testimonial" className="dropdown-item">
-                  Testimonial
-                </Link>
-                <Link to="/Error" className="dropdown-item">
-                  404 Page
-                </Link>
-              </div>
-            </div>
-            <Link to="/Contact" className="nav-item nav-link">
+            <Link
+              to="/contact"
+              className="text-gray-600 hover:text-blue-600 transition duration-200"
+            >
               Contact
             </Link>
           </div>
-          <Link to="/" className="btn btn-primary rounded-pill py-2 px-4">
-            Register
-          </Link>
-        </div>
-      </nav>
-    </div>
-    {/* Navbar & Hero End */}
-    </div>
-  )
-}
 
-export default Header
+          {/* Mobile Menu Button */}
+          <div className="md:hidden">
+            <button
+              type="button"
+              className="text-gray-600 hover:text-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-600"
+              onClick={() =>
+                document
+                  .getElementById("mobile-menu")
+                  .classList.toggle("hidden")
+              }
+            >
+              <svg
+                className="h-6 w-6"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M4 6h16M4 12h16m-7 6h7"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      {/* Mobile Menu */}
+      <div
+        id="mobile-menu"
+        className="hidden md:hidden bg-white shadow-md py-4 space-y-4"
+      >
+        <Link
+          to="/"
+          className="block text-gray-600 hover:text-blue-600 transition duration-200 text-center"
+        >
+          Home
+        </Link>
+        <Link
+          to="/about"
+          className="block text-gray-600 hover:text-blue-600 transition duration-200 text-center"
+        >
+          About
+        </Link>
+        <Link
+          to="/services"
+          className="block text-gray-600 hover:text-blue-600 transition duration-200 text-center"
+        >
+          Services
+        </Link>
+        <Link
+          to="/packages"
+          className="block text-gray-600 hover:text-blue-600 transition duration-200 text-center"
+        >
+          Packages
+        </Link>
+        <Link
+          to="/contact"
+          className="block text-gray-600 hover:text-blue-600 transition duration-200 text-center"
+        >
+          Contact
+        </Link>
+      </div>
+    </nav>
+  );
+};
+
+export default Navbar;

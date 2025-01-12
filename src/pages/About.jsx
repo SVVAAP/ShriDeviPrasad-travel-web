@@ -3,26 +3,7 @@ import React from 'react';
 function About() {
   return (
     <div>
-      {/* Hero Section */}
-      <div className="bg-primary py-5 mb-5 hero-header">
-        <div className="container py-5">
-          <div className="flex justify-center py-5">
-            <div className="text-center pt-5 mt-5">
-              <h1 className="text-white text-4xl font-bold animate__animated animate__slideInDown">
-                About Us
-              </h1>
-              <nav aria-label="breadcrumb">
-                <ol className="flex justify-center space-x-2 text-white">
-                  <li>
-                    <a href="/" className="hover:text-gray-300">Home</a>
-                  </li>
-                  <li className="text-white" aria-current="page">About</li>
-                </ol>
-              </nav>
-            </div>
-          </div>
-        </div>
-      </div>
+
 
       {/* About Section */}
       <div className="container mx-auto py-10">
