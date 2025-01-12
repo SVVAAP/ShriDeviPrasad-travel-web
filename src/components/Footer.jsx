@@ -63,42 +63,42 @@ export default function Footer() {
               <div className="col-4">
                 <img
                   className="img-fluid bg-light p-1"
-                  src="assets/img/package-1.jpg"
+                  src="./src/assets/img/package-1.jpg"
                   alt=""
                 />
               </div>
               <div className="col-4">
                 <img
                   className="img-fluid bg-light p-1"
-                  src="assets/img/package-2.jpg"
+                  src="./src/assets/img/package-2.jpg"
                   alt=""
                 />
               </div>
               <div className="col-4">
                 <img
                   className="img-fluid bg-light p-1"
-                  src="assets/img/package-3.jpg"
+                  src="./src/assets/img/package-3.jpg"
                   alt=""
                 />
               </div>
               <div className="col-4">
                 <img
                   className="img-fluid bg-light p-1"
-                  src="assets/img/package-2.jpg"
+                  src="./src/assets/img/package-2.jpg"
                   alt=""
                 />
               </div>
               <div className="col-4">
                 <img
                   className="img-fluid bg-light p-1"
-                  src="assets/img/package-3.jpg"
+                  src="./src/assets/img/package-3.jpg"
                   alt=""
                 />
               </div>
               <div className="col-4">
                 <img
                   className="img-fluid bg-light p-1"
-                  src="assets/img/package-1.jpg"
+                  src="./src/assets/img/package-1.jpg"
                   alt=""
                 />
               </div>

@@ -44,7 +44,7 @@ export default function Home() {
             <div className="position-relative h-100">
               <img
                 className="img-fluid position-absolute w-100 h-100"
-                src="assets/img/about.jpg"
+                src="./src/assets/img/about.jpg"
                 alt=""
                 style={{ objectFit: "cover" }}
               />
@@ -244,7 +244,7 @@ export default function Home() {
                 >
                   <img
                     className="img-fluid"
-                    src="assets/img/destination-1.jpg"
+                    src="./src/assets/img/destination-1.jpg"
                     alt=""
                   />
                   <div className="bg-white text-danger fw-bold position-absolute top-0 start-0 m-3 py-1 px-2">
@@ -265,7 +265,7 @@ export default function Home() {
                 >
                   <img
                     className="img-fluid"
-                    src="assets/img/destination-2.jpg"
+                    src="./src/assets/img/destination-2.jpg"
                     alt=""
                   />
                   <div className="bg-white text-danger fw-bold position-absolute top-0 start-0 m-3 py-1 px-2">
@@ -286,7 +286,7 @@ export default function Home() {
                 >
                   <img
                     className="img-fluid"
-                    src="assets/img/destination-3.jpg"
+                    src="./src/assets/img/destination-3.jpg"
                     alt=""
                   />
                   <div className="bg-white text-danger fw-bold position-absolute top-0 start-0 m-3 py-1 px-2">
@@ -310,7 +310,7 @@ export default function Home() {
             >
               <img
                 className="img-fluid position-absolute w-100 h-100"
-                src="assets/img/destination-4.jpg"
+                src="./src/assets/img/destination-4.jpg"
                 alt=""
                 style={{ objectFit: "cover" }}
               />
@@ -339,7 +339,7 @@ export default function Home() {
           <div className="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
             <div className="package-item">
               <div className="overflow-hidden">
-                <img className="img-fluid" src="assets/img/package-1.jpg" alt="" />
+                <img className="img-fluid" src="./src/assets/img/package-1.jpg" alt="" />
               </div>
               <div className="d-flex border-bottom">
                 <small className="flex-fill text-center border-end py-2">
@@ -388,7 +388,7 @@ export default function Home() {
           <div className="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
             <div className="package-item">
               <div className="overflow-hidden">
-                <img className="img-fluid" src="assets/img/package-2.jpg" alt="" />
+                <img className="img-fluid" src="./src/assets/img/package-2.jpg" alt="" />
               </div>
               <div className="d-flex border-bottom">
                 <small className="flex-fill text-center border-end py-2">
@@ -437,7 +437,7 @@ export default function Home() {
           <div className="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
             <div className="package-item">
               <div className="overflow-hidden">
-                <img className="img-fluid" src="assets/img/package-3.jpg" alt="" />
+                <img className="img-fluid" src="./src/assets/img/package-3.jpg" alt="" />
               </div>
               <div className="d-flex border-bottom">
                 <small className="flex-fill text-center border-end py-2">
@@ -679,7 +679,7 @@ export default function Home() {
           <div className="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
             <div className="team-item">
               <div className="overflow-hidden">
-                <img className="img-fluid" src="assets/img/team-1.jpg" alt="" />
+                <img className="img-fluid" src="./src/assets/img/team-1.jpg" alt="" />
               </div>
               <div
                 className="position-relative d-flex justify-content-center"
@@ -704,7 +704,7 @@ export default function Home() {
           <div className="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
             <div className="team-item">
               <div className="overflow-hidden">
-                <img className="img-fluid" src="assets/img/team-2.jpg" alt="" />
+                <img className="img-fluid" src="./src/assets/img/team-2.jpg" alt="" />
               </div>
               <div
                 className="position-relative d-flex justify-content-center"
@@ -729,7 +729,7 @@ export default function Home() {
           <div className="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
             <div className="team-item">
               <div className="overflow-hidden">
-                <img className="img-fluid" src="assets/img/team-3.jpg" alt="" />
+                <img className="img-fluid" src="./src/assets/img/team-3.jpg" alt="" />
               </div>
               <div
                 className="position-relative d-flex justify-content-center"
@@ -754,7 +754,7 @@ export default function Home() {
           <div className="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
             <div className="team-item">
               <div className="overflow-hidden">
-                <img className="img-fluid" src="assets/img/team-4.jpg" alt="" />
+                <img className="img-fluid" src="./src/assets/img/team-4.jpg" alt="" />
               </div>
               <div
                 className="position-relative d-flex justify-content-center"
@@ -793,7 +793,7 @@ export default function Home() {
           <div className="testimonial-item bg-white text-center border p-4">
             <img
               className="bg-white rounded-circle shadow p-1 mx-auto mb-3"
-              src="assets/img/testimonial-1.jpg"
+              src="./src/assets/img/testimonial-1.jpg"
               style={{ width: 80, height: 80 }}
             />
             <h5 className="mb-0">John Doe</h5>
@@ -806,7 +806,7 @@ export default function Home() {
           <div className="testimonial-item bg-white text-center border p-4">
             <img
               className="bg-white rounded-circle shadow p-1 mx-auto mb-3"
-              src="assets/img/testimonial-2.jpg"
+              src="./src/assets/img/testimonial-2.jpg"
               style={{ width: 80, height: 80 }}
             />
             <h5 className="mb-0">John Doe</h5>
@@ -819,7 +819,7 @@ export default function Home() {
           <div className="testimonial-item bg-white text-center border p-4">
             <img
               className="bg-white rounded-circle shadow p-1 mx-auto mb-3"
-              src="assets/img/testimonial-3.jpg"
+              src="./src/assets/img/testimonial-3.jpg"
               style={{ width: 80, height: 80 }}
             />
             <h5 className="mb-0">John Doe</h5>
@@ -832,7 +832,7 @@ export default function Home() {
           <div className="testimonial-item bg-white text-center border p-4">
             <img
               className="bg-white rounded-circle shadow p-1 mx-auto mb-3"
-              src="assets/img/testimonial-4.jpg"
+              src="./src/assets/img/testimonial-4.jpg"
               style={{ width: 80, height: 80 }}
             />
             <h5 className="mb-0">John Doe</h5>

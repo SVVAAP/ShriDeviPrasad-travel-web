@@ -1,232 +1,151 @@
-import React from 'react'
+import React from 'react';
 
 function About() {
   return (
     <div>
-        <div className="container-fluid bg-primary py-5 mb-5 hero-header">
-    <div className="container py-5">
-      <div className="row justify-content-center py-5">
-        <div className="col-lg-10 pt-lg-5 mt-lg-5 text-center">
-          <h1 className="display-3 text-white animated slideInDown">
-            About Us
-          </h1>
-          <nav aria-label="breadcrumb">
-            <ol className="breadcrumb justify-content-center">
-              <li className="breadcrumb-item">
-                <a href="/">Home</a>
-              </li>
-              {/* <li className="breadcrumb-item">
-                <a href="/Pages">Pages</a>
-              </li> */}
-              <li
-                className="breadcrumb-item text-white active"
-                aria-current="page"
-              >
-                About
-              </li>
-            </ol>
-          </nav>
+      {/* Hero Section */}
+      <div className="bg-primary py-5 mb-5 hero-header">
+        <div className="container py-5">
+          <div className="flex justify-center py-5">
+            <div className="text-center pt-5 mt-5">
+              <h1 className="text-white text-4xl font-bold animate__animated animate__slideInDown">
+                About Us
+              </h1>
+              <nav aria-label="breadcrumb">
+                <ol className="flex justify-center space-x-2 text-white">
+                  <li>
+                    <a href="/" className="hover:text-gray-300">Home</a>
+                  </li>
+                  <li className="text-white" aria-current="page">About</li>
+                </ol>
+              </nav>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  </div>
-        
-            {/* About Start */}
-    <div className="container-xxl py-5">
-      <div className="container">
-        <div className="row g-5">
+
+      {/* About Section */}
+      <div className="container mx-auto py-10">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
+          {/* Left Section */}
           <div
-            className="col-lg-6 wow fadeInUp"
+            className="wow fadeInUp"
             data-wow-delay="0.1s"
-            style={{ minHeight: 400 }}
+            style={{ minHeight: '400px' }}
           >
-            <div className="position-relative h-100">
+            <div className="relative h-full">
               <img
-                className="img-fluid position-absolute w-100 h-100"
-                src="assets/img/about.jpg"
-                alt=""
-                style={{ objectFit: "cover" }}
+                className="absolute inset-0 w-full h-full object-cover"
+                src="src/assets/img/about.jpg"
+                alt="About Us"
               />
             </div>
           </div>
-          <div className="col-lg-6 wow fadeInUp" data-wow-delay="0.3s">
-            <h6 className="section-title bg-white text-start text-primary pe-3">
+          {/* Right Section */}
+          <div className="wow fadeInUp" data-wow-delay="0.3s">
+            <h6 className="text-primary font-bold bg-white inline-block px-2 mb-4">
               About Us
             </h6>
-            <h1 className="mb-4">
+            <h1 className="text-3xl font-bold mb-6">
               Welcome to <span className="text-primary">Tourist</span>
             </h1>
-            <p className="mb-4">
-              Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu
-              diam amet diam et eos. Clita erat ipsum et lorem et sit.
+            <p className="mb-6 text-gray-700">
+              Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam
+              amet diam et eos. Clita erat ipsum et lorem et sit.
             </p>
-            <p className="mb-4">
-              Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu
-              diam amet diam et eos. Clita erat ipsum et lorem et sit, sed stet
-              lorem sit clita duo justo magna dolore erat amet
+            <p className="mb-6 text-gray-700">
+              Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam
+              amet diam et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit
+              clita duo justo magna dolore erat amet
             </p>
-            <div className="row gy-2 gx-4 mb-4">
-              <div className="col-sm-6">
-                <p className="mb-0">
-                  <i className="fa fa-arrow-right text-primary me-2" />
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+              <div>
+                <p className="mb-0 flex items-center">
+                  <i className="fas fa-arrow-right text-primary mr-2"></i>
                   First Class Flights
                 </p>
               </div>
-              <div className="col-sm-6">
-                <p className="mb-0">
-                  <i className="fa fa-arrow-right text-primary me-2" />
+              <div>
+                <p className="mb-0 flex items-center">
+                  <i className="fas fa-arrow-right text-primary mr-2"></i>
                   Handpicked Hotels
                 </p>
               </div>
-              <div className="col-sm-6">
-                <p className="mb-0">
-                  <i className="fa fa-arrow-right text-primary me-2" />5 Star
-                  Accommodations
+              <div>
+                <p className="mb-0 flex items-center">
+                  <i className="fas fa-arrow-right text-primary mr-2"></i>
+                  5 Star Accommodations
                 </p>
               </div>
-              <div className="col-sm-6">
-                <p className="mb-0">
-                  <i className="fa fa-arrow-right text-primary me-2" />
+              <div>
+                <p className="mb-0 flex items-center">
+                  <i className="fas fa-arrow-right text-primary mr-2"></i>
                   Latest Model Vehicles
                 </p>
               </div>
-              <div className="col-sm-6">
-                <p className="mb-0">
-                  <i className="fa fa-arrow-right text-primary me-2" />
+              <div>
+                <p className="mb-0 flex items-center">
+                  <i className="fas fa-arrow-right text-primary mr-2"></i>
                   150 Premium City Tours
                 </p>
               </div>
-              <div className="col-sm-6">
-                <p className="mb-0">
-                  <i className="fa fa-arrow-right text-primary me-2" />
+              <div>
+                <p className="mb-0 flex items-center">
+                  <i className="fas fa-arrow-right text-primary mr-2"></i>
                   24/7 Service
                 </p>
               </div>
             </div>
-            <a className="btn btn-primary py-3 px-5 mt-2" href="">
+            <a
+              href="#"
+              className="bg-primary text-white font-bold py-3 px-5 rounded shadow hover:bg-primary-dark transition-all"
+            >
               Read More
             </a>
           </div>
         </div>
       </div>
-    </div>
-    {/* About End */}
-    {/* Team Start */}
-    <div className="container-xxl py-5">
-      <div className="container">
-        <div className="text-center wow fadeInUp" data-wow-delay="0.1s">
-          <h6 className="section-title bg-white text-center text-primary px-3">
+
+
+      {/* Team Section */}
+      <div className="container py-10">
+        <div className="text-center">
+          <h6 className="text-primary text-lg font-bold bg-white inline-block p-2 mb-4">
             Travel Guide
           </h6>
-          <h1 className="mb-5">Meet Our Guide</h1>
+          <h1 className="text-3xl mb-5">Meet Our Guide</h1>
         </div>
-        <div className="row g-4">
-          <div className="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-            <div className="team-item">
-              <div className="overflow-hidden">
-                <img className="img-fluid" src="assets/img/team-1.jpg" alt="" />
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+          {['team-1', 'team-2', 'team-3', 'team-4'].map((team, index) => (
+            <div key={index} className="team-item">
+              <div className="overflow-hidden rounded-lg shadow-lg">
+                <img
+                  className="w-full h-64 object-cover"
+                  src={`./src/assets/img/${team}.jpg`}
+                  alt="Team Member"
+                />
               </div>
-              <div
-                className="position-relative d-flex justify-content-center"
-                style={{ marginTop: "-19px" }}
-              >
-                <a className="btn btn-square mx-1" href="">
-                  <i className="fab fa-facebook-f" />
+              <div className="flex justify-center mt-[-19px]">
+                <a href="#" className="bg-gray-200 p-2 m-1 rounded-full">
+                  <i className="fab fa-facebook-f text-primary"></i>
                 </a>
-                <a className="btn btn-square mx-1" href="">
-                  <i className="fab fa-twitter" />
+                <a href="#" className="bg-gray-200 p-2 m-1 rounded-full">
+                  <i className="fab fa-twitter text-primary"></i>
                 </a>
-                <a className="btn btn-square mx-1" href="">
-                  <i className="fab fa-instagram" />
-                </a>
-              </div>
-              <div className="text-center p-4">
-                <h5 className="mb-0">Full Name</h5>
-                <small>Designation</small>
-              </div>
-            </div>
-          </div>
-          <div className="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-            <div className="team-item">
-              <div className="overflow-hidden">
-                <img className="img-fluid" src="assets/img/team-2.jpg" alt="" />
-              </div>
-              <div
-                className="position-relative d-flex justify-content-center"
-                style={{ marginTop: "-19px" }}
-              >
-                <a className="btn btn-square mx-1" href="">
-                  <i className="fab fa-facebook-f" />
-                </a>
-                <a className="btn btn-square mx-1" href="">
-                  <i className="fab fa-twitter" />
-                </a>
-                <a className="btn btn-square mx-1" href="">
-                  <i className="fab fa-instagram" />
+                <a href="#" className="bg-gray-200 p-2 m-1 rounded-full">
+                  <i className="fab fa-instagram text-primary"></i>
                 </a>
               </div>
               <div className="text-center p-4">
-                <h5 className="mb-0">Full Name</h5>
-                <small>Designation</small>
+                <h5 className="text-lg font-semibold mb-0">Full Name</h5>
+                <small className="text-gray-600">Designation</small>
               </div>
             </div>
-          </div>
-          <div className="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-            <div className="team-item">
-              <div className="overflow-hidden">
-                <img className="img-fluid" src="assets/img/team-3.jpg" alt="" />
-              </div>
-              <div
-                className="position-relative d-flex justify-content-center"
-                style={{ marginTop: "-19px" }}
-              >
-                <a className="btn btn-square mx-1" href="">
-                  <i className="fab fa-facebook-f" />
-                </a>
-                <a className="btn btn-square mx-1" href="">
-                  <i className="fab fa-twitter" />
-                </a>
-                <a className="btn btn-square mx-1" href="">
-                  <i className="fab fa-instagram" />
-                </a>
-              </div>
-              <div className="text-center p-4">
-                <h5 className="mb-0">Full Name</h5>
-                <small>Designation</small>
-              </div>
-            </div>
-          </div>
-          <div className="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
-            <div className="team-item">
-              <div className="overflow-hidden">
-                <img className="img-fluid" src="assets/img/team-4.jpg" alt="" />
-              </div>
-              <div
-                className="position-relative d-flex justify-content-center"
-                style={{ marginTop: "-19px" }}
-              >
-                <a className="btn btn-square mx-1" href="">
-                  <i className="fab fa-facebook-f" />
-                </a>
-                <a className="btn btn-square mx-1" href="">
-                  <i className="fab fa-twitter" />
-                </a>
-                <a className="btn btn-square mx-1" href="">
-                  <i className="fab fa-instagram" />
-                </a>
-              </div>
-              <div className="text-center p-4">
-                <h5 className="mb-0">Full Name</h5>
-                <small>Designation</small>
-              </div>
-            </div>
-          </div>
+          ))}
         </div>
       </div>
     </div>
-    {/* Team End */}
-    </div>
-  )
+  );
 }
 
-export default About
+export default About;

@@ -49,7 +49,7 @@ function Destination() {
                 >
                   <img
                     className="img-fluid"
-                    src="assets/img/destination-1.jpg"
+                    src="./src/assets/img/destination-1.jpg"
                     alt=""
                   />
                   <div className="bg-white text-danger fw-bold position-absolute top-0 start-0 m-3 py-1 px-2">
@@ -70,7 +70,7 @@ function Destination() {
                 >
                   <img
                     className="img-fluid"
-                    src="assets/img/destination-2.jpg"
+                    src="./src/assets/img/destination-2.jpg"
                     alt=""
                   />
                   <div className="bg-white text-danger fw-bold position-absolute top-0 start-0 m-3 py-1 px-2">
@@ -91,7 +91,7 @@ function Destination() {
                 >
                   <img
                     className="img-fluid"
-                    src="assets/img/destination-3.jpg"
+                    src="./src/assets/img/destination-3.jpg"
                     alt=""
                   />
                   <div className="bg-white text-danger fw-bold position-absolute top-0 start-0 m-3 py-1 px-2">
@@ -115,7 +115,7 @@ function Destination() {
             >
               <img
                 className="img-fluid position-absolute w-100 h-100"
-                src="assets/img/destination-4.jpg"
+                src="./src/assets/img/destination-4.jpg"
                 alt=""
                 style={{ objectFit: "cover" }}
               />
