@@ -9,6 +9,7 @@ import Booking from '../components/Booking';
 import Team from '../components/Team';
 import Testimonial from '../components/Testimonial';
 import Contact from '../components/Contact';
+import Vehicle from '../components/Vehicel';
 
 export default function Home() {
   return (
@@ -72,6 +73,7 @@ export default function Home() {
 
   
       <About />
+      <Vehicle/>
       <Services />
       <Packages />
       <Destination />
