@@ -2,7 +2,7 @@ import React from 'react'
 
 function Packages() {
   return (
-    <div>
+    <div id="packages">
 
       {/* Package Start */}
 <div className="container-xxl py-5">

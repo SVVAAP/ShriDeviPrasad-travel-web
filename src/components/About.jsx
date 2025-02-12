@@ -2,7 +2,7 @@ import React from "react";
 
 function About() {
   return (
-    <div>
+    <div id="about">
       {/* About Section */}
       <div className="container mx-auto py-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">

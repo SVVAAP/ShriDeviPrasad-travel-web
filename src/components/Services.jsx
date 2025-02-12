@@ -2,7 +2,7 @@ import React from 'react'
 
 function Services() {
   return (
-    <div>
+    <div id="services" >
          
     {/* Service Start */}
 <div className="container-xxl py-5">
@@ -31,7 +31,7 @@ function Services() {
         <div className="service-item rounded pt-3">
           <div className="p-4">
             <i className="fa fa-3x fa-bus text-primary mb-4" />
-            <h5>Transport Services</h5>
+            <h5>Air Ticket / Bus Ticket Booking</h5>
             <p>
               Reliable and comfortable transport options, including buses, vans, and cars for your journeys across Karnataka and beyond.
             </p>
@@ -42,8 +42,8 @@ function Services() {
       <div className="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.5s">
         <div className="service-item rounded pt-3">
           <div className="p-4">
-            <i className="fa fa-3x fa-building text-primary mb-4" />
-            <h5>Corporate Travel</h5>
+            <i className="fa fa-3x fa-solid fa-car text-primary mb-4" />
+            <h5>Car, Cab, Taxi Rental Services</h5>
             <p>
               Specialized services for corporate tours, business events, and client visits with professional-grade arrangements.
             </p>
@@ -55,7 +55,7 @@ function Services() {
         <div className="service-item rounded pt-3">
           <div className="p-4">
             <i className="fa fa-3x fa-route text-primary mb-4" />
-            <h5>Custom Itineraries</h5>
+            <h5>College Picnics / office / Corporate Trip</h5>
             <p>
               Plan your trips with our personalized itinerary services. Your preferences, our expertise!
             </p>
@@ -91,7 +91,7 @@ function Services() {
         <div className="service-item rounded pt-3">
           <div className="p-4">
             <i className="fa fa-3x fa-map-marker-alt text-primary mb-4" />
-            <h5>Local Guides</h5>
+            <h5>Taxi service in Udupi / Manipal </h5>
             <p>
               Experienced local guides to make your tours more enriching and memorable with insights and stories.
             </p>
@@ -102,8 +102,8 @@ function Services() {
       <div className="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="1.5s">
         <div className="service-item rounded pt-3">
           <div className="p-4">
-            <i className="fa fa-3x fa-clock text-primary mb-4" />
-            <h5>24/7 Assistance</h5>
+            <i className="fa fa-3x fa-solid fa-book text-primary mb-4" />
+            <h5>Passport / VISA Services</h5>
             <p>
               Our team is available round the clock to assist you with any queries or emergencies during your travel.
             </p>

@@ -21,24 +21,24 @@ const Navbar = () => {
             >
               Home
             </Link>
-            <Link
-              to="/about"
+            <a
+              href="#about"
               className="text-gray-600 hover:text-blue-600 transition duration-200"
             >
               About
-            </Link>
-            <Link
-              to="/services"
+            </a>
+            <a
+              href="#services"
               className="text-gray-600 hover:text-blue-600 transition duration-200"
             >
               Services
-            </Link>
-            <Link
-              to="/packages"
+            </a>
+            <a
+              href="packages"
               className="text-gray-600 hover:text-blue-600 transition duration-200"
             >
               Packages
-            </Link>
+            </a>
             <Link
               to="/contact"
               className="text-gray-600 hover:text-blue-600 transition duration-200"
