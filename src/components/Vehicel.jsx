@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 function About() {
   return (
@@ -6,7 +7,7 @@ function About() {
     
       {/* Vehicles Section */}
       <div className="container py-10">
-        <div className="text-center">
+        <div className="text-center ">
           <h6 className="text-primary text-lg font-bold bg-white inline-block p-2 mb-4">
             Vehicles Available
           </h6>
@@ -15,6 +16,7 @@ function About() {
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 gap-8">
           {/* Vehicle 1 */}
           <div className="team-item">
+            <Link to="/booking" vehicel="">
             <div className="overflow-hidden rounded-lg shadow-lg">
               <img
                 className="w-full h-full object-cover"
@@ -28,6 +30,7 @@ function About() {
                 Spacious and comfortable buses for group tours with premium amenities.
               </p>
             </div>
+            </Link>
           </div>
 
           {/* Vehicle 2 */}

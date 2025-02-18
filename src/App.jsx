@@ -14,6 +14,7 @@ import Error from './pages/Error';
 import Contact from './pages/Contact';
 import './index.css';
 import './App.css';
+import Form from "./components/Form";
 
 export default function App() {
   return (
@@ -30,6 +31,7 @@ export default function App() {
         <Route path="/testimonial" element={<Testimonial />} />
         <Route path="/error" element={<Error />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/vehicel-booking" element={<Form />} />
       </Routes>
       <Footer />
     </BrowserRouter>

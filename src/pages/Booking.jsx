@@ -8,7 +8,7 @@ function Booking() {
       <div className="row justify-content-center py-5">
         <div className="col-lg-10 pt-lg-5 mt-lg-5 text-center">
           <h1 className="display-3 text-white animated slideInDown">Booking</h1>
-          <nav aria-label="breadcrumb">
+          {/* <nav aria-label="breadcrumb">
             <ol className="breadcrumb justify-content-center">
               <li className="breadcrumb-item">
                 <a href="/">Home</a>
@@ -20,115 +20,26 @@ function Booking() {
                 Booking
               </li>
             </ol>
-          </nav>
+          </nav> */}
         </div>
       </div>
     </div>
   </div>
-      {/* Process Start */}
-      <div className="container-xxl py-5">
-      <div className="container">
-        <div className="text-center pb-4 wow fadeInUp" data-wow-delay="0.1s">
-          <h6 className="section-title bg-white text-center text-primary px-3">
-            Process
-          </h6>
-          <h1 className="mb-5">3 Easy Steps</h1>
-        </div>
-        <div className="row gy-5 gx-4 justify-content-center">
-          <div
-            className="col-lg-4 col-sm-6 text-center pt-4 wow fadeInUp"
-            data-wow-delay="0.1s"
-          >
-            <div className="position-relative border border-primary pt-5 pb-4 px-4">
-              <div
-                className="d-inline-flex align-items-center justify-content-center bg-primary rounded-circle position-absolute top-0 start-50 translate-middle shadow"
-                style={{ width: 100, height: 100 }}
-              >
-                <i className="fa fa-globe fa-3x text-white" />
-              </div>
-              <h5 className="mt-4">Choose A Destination</h5>
-              <hr className="w-25 mx-auto bg-primary mb-1" />
-              <hr className="w-50 mx-auto bg-primary mt-0" />
-              <p className="mb-0">
-                Tempor erat elitr rebum clita dolor diam ipsum sit diam amet
-                diam eos erat ipsum et lorem et sit sed stet lorem sit
-              </p>
-            </div>
-          </div>
-          <div
-            className="col-lg-4 col-sm-6 text-center pt-4 wow fadeInUp"
-            data-wow-delay="0.3s"
-          >
-            <div className="position-relative border border-primary pt-5 pb-4 px-4">
-              <div
-                className="d-inline-flex align-items-center justify-content-center bg-primary rounded-circle position-absolute top-0 start-50 translate-middle shadow"
-                style={{ width: 100, height: 100 }}
-              >
-                <i className="fa fa-dollar-sign fa-3x text-white" />
-              </div>
-              <h5 className="mt-4">Pay Online</h5>
-              <hr className="w-25 mx-auto bg-primary mb-1" />
-              <hr className="w-50 mx-auto bg-primary mt-0" />
-              <p className="mb-0">
-                Tempor erat elitr rebum clita dolor diam ipsum sit diam amet
-                diam eos erat ipsum et lorem et sit sed stet lorem sit
-              </p>
-            </div>
-          </div>
-          <div
-            className="col-lg-4 col-sm-6 text-center pt-4 wow fadeInUp"
-            data-wow-delay="0.5s"
-          >
-            <div className="position-relative border border-primary pt-5 pb-4 px-4">
-              <div
-                className="d-inline-flex align-items-center justify-content-center bg-primary rounded-circle position-absolute top-0 start-50 translate-middle shadow"
-                style={{ width: 100, height: 100 }}
-              >
-                <i className="fa fa-plane fa-3x text-white" />
-              </div>
-              <h5 className="mt-4">Fly Today</h5>
-              <hr className="w-25 mx-auto bg-primary mb-1" />
-              <hr className="w-50 mx-auto bg-primary mt-0" />
-              <p className="mb-0">
-                Tempor erat elitr rebum clita dolor diam ipsum sit diam amet
-                diam eos erat ipsum et lorem et sit sed stet lorem sit
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    {/* Process Start */}
+
     {/* Booking Start */}
-    <div className="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s">
-      <div className="container">
+    {/* <div className="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s">
+      <div className="container text-white ">
         <div className="booking p-5">
-          <div className="row g-5 align-items-center">
-            <div className="col-md-6 text-white">
-              <h6 className="text-white text-uppercase">Booking</h6>
-              <h1 className="text-white mb-4">Online Booking</h1>
-              <p className="mb-4">
-                Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit.
-                Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit.
-              </p>
-              <p className="mb-4">
-                Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit.
-                Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit,
-                sed stet lorem sit clita duo justo magna dolore erat amet
-              </p>
-              <a className="btn btn-outline-light py-3 px-5 mt-2" href="">
-                Read More
-              </a>
-            </div>
+          <div className="align-items-center">
             <div className="col-md-6">
-              <h1 className="text-white mb-4">Book A Tour</h1>
+              <h1 className="mb-4">Book A Tour</h1>
               <form>
                 <div className="row g-3">
                   <div className="col-md-6">
                     <div className="form-floating">
                       <input
                         type="text"
-                        className="form-control bg-transparent"
+                        className="form-control bg-transparent text-white"
                         id="name"
                         placeholder="Your Name"
                       />
@@ -167,7 +78,6 @@ function Booking() {
                     <div className="form-floating">
                       <select
                         className="form-select bg-transparent"
-                        id="select1"
                       >
                         <option value={1}>Destination 1</option>
                         <option value={2}>Destination 2</option>
@@ -201,6 +111,44 @@ function Booking() {
             </div>
           </div>
         </div>
+      </div>
+    </div> */}
+    {/* Booking Start 
+    </div>*/}
+    <div className="flex justify-center items-center min-h-screen bg-gray-900 text-white py-5">
+      <div className="bg-gray-800 p-8 w-full max-w-lg rounded-lg shadow-md">
+        <h1 className="text-2xl font-bold mb-4 text-center">Book A Tour</h1>
+        <form className="space-y-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div>
+              <label className="block text-sm font-semibold">Your Name</label>
+              <input type="text" className="w-full p-2 bg-transparent border rounded text-white" placeholder="Your Name" />
+            </div>
+            <div>
+              <label className="block text-sm font-semibold">Your Email</label>
+              <input type="email" className="w-full p-2 bg-transparent border rounded text-white" placeholder="Your Email" />
+            </div>
+          </div>
+          <div>
+            <label className="block text-sm font-semibold">Date & Time</label>
+            <input type="text" className="w-full p-2 bg-transparent border rounded text-white" placeholder="Date & Time" />
+          </div>
+          <div>
+            <label className="block text-sm font-semibold">Destination</label>
+            <select className="w-full p-2 bg-transparent border rounded text-white">
+              <option value={1}>Destination 1</option>
+              <option value={2}>Destination 2</option>
+              <option value={3}>Destination 3</option>
+            </select>
+          </div>
+          <div>
+            <label className="block text-sm font-semibold">Special Request</label>
+            <textarea className="w-full p-2 bg-transparent border rounded text-white" placeholder="Special Request" style={{ height: 100 }}></textarea>
+          </div>
+          <button type="submit" className="w-full bg-transparent border border-white py-2 rounded text-white hover:bg-white hover:text-black transition">
+            Book Now
+          </button>
+        </form>
       </div>
     </div>
     {/* Booking Start */}
