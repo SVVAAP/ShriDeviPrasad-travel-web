@@ -115,14 +115,14 @@ function Booking() {
     </div> */}
     {/* Booking Start 
     </div>*/}
-    <div className="flex justify-center items-center min-h-screen bg-gray-900 text-white py-5 wow fadeInUp m-20 rounded-lg shadow-lg"
+    <div className="flex justify-center items-center min-h-screen bg-gray-900 text-white py-5 wow fadeInUp m-20 rounded-2xl shadow-2xl"
     data-wow-delay="0.1s"
     style={{
       backgroundImage: 'url("https://cdn.shortpixel.ai/spai/q_lossy+ret_img+to_auto/www.alpineascents.com/wp-content/uploads/2017/09/ladakh-trek-e1635267234139.jpg")',
       backgroundSize: 'cover',
       backgroundPosition: 'center center',
     }}>
-      <div className="bg-gray-800  p-8 w-full max-w-lg rounded-lg shadow-md" style={{ backgroundColor: 'rgba(31, 41, 55, 0.8)' }} >
+      <div className="bg-gray-800  p-8 w-full max-w-lg rounded-lg shadow-md hover:scale-105 transition-transform ease-in-out delay-150" style={{ backgroundColor: 'rgba(31, 41, 55, 0.8)' }} >
         <h1 className="text-2xl font-bold mb-4 text-center">Book A Tour</h1>
         <form className="space-y-4">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -151,7 +151,7 @@ function Booking() {
             <label className="block text-sm font-semibold">Special Request</label>
             <textarea className="w-full p-2 bg-transparent border rounded text-white" placeholder="Special Request" style={{ height: 100 }}></textarea>
           </div>
-          <button type="submit" className="w-full bg-transparent border border-white py-2 rounded text-white hover:bg-white hover:text-black transition">
+          <button type="submit" className="w-full bg-gray-900/5 border py-2 rounded border-white  hover:bg-white hover:text-black transition">
             Book Now
           </button>
         </form>
