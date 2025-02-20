@@ -20,7 +20,9 @@ import AdminLogin from "./components/Admin/Login";
 import AdminPackages from "./components/Admin/Packages";
 import AdminVehicles from "./components/Admin/VehiclePackages";
 import AdminSiteContent from "./components/Admin/EditSiteContent";
+import AdminBooking from "./components/Admin/Booking";
 import AdminProtectedRoute from "./components/Admin/AdminProtectedRoute";
+
 
 import "./index.css";
 import "./App.css";
@@ -57,6 +59,8 @@ export default function App() {
           <Route path="packages" element={<AdminPackages />} />
           <Route path="vehicles" element={<AdminVehicles />} />
           <Route path="sitecontent" element={<AdminSiteContent />} />
+          <Route path="Bookings" element={<AdminBooking />} />
+
         </Route>
 
         {/* ✅ Public Routes (With Header & Footer) */}
