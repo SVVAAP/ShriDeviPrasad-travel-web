@@ -1,6 +1,10 @@
 const express = require('express');
 const mysql = require('mysql2');
 const bodyParser = require('body-parser');
+require('dotenv').config();
+const cors = require("cors");
+const helmet = require("helmet");
+
 
 const app = express();
 app.use(bodyParser.json());
@@ -14,9 +18,32 @@ const db = mysql.createConnection({
 });
 
 db.connect(err => {
-    if (err) throw err;
-    console.log('MySQL Connected...');
+    if (err) {
+        console.error('Database connection failed:', err);
+        return;
+    }
+    console.log('✅ MySQL Connected...');
 });
+
+// Use CORS to allow frontend requests
+app.use(cors({ origin: "http://localhost:3000" })); // Adjust if needed
+
+// Set Content Security Policy (CSP) Headers
+app.use(
+  helmet({
+    contentSecurityPolicy: {
+      directives: {
+        defaultSrc: ["'self'", "http://localhost:3000"],
+        connectSrc: ["'self'", "http://localhost:5000"],
+      },
+    },
+  })
+);
+
+app.get("/", (req, res) => {
+  res.send("CSP Policy Updated");
+});
+
 
 // Create Data
 app.post('/vehicles', (req, res) => {
