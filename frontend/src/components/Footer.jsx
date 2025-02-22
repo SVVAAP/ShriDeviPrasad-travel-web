@@ -93,16 +93,16 @@ export default function Footer() {
             <div className="row justify-content-center">
               <div className="col-md-6 text-center mb-3 mb-md-0">
                 ©{" "}
-                <a className="border-bottom" href="#">
+                <a className="border-bottom" href="https://SVVAAP.in">
                   Svvaap Innovations
                 </a>
                 , All Right Reserved.
                 Designed By{" "}
-                <a className="border-bottom" href="https://github.com/SVVAAP">
+                <a className="border-bottom" href="https://SVVAAP.in">
                   svvaap
                 </a>
                 <br />
-                <h5 className="text-white mt-3">Shri Devi Prasad Tout and Travels</h5>
+                <h5 className="text-white mt-3">Shri Devi Prasad Tours and Travels</h5>
               </div>
               <div className="col-md-6 text-center">
                 <div className="footer-menu">
