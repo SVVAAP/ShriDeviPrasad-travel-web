@@ -9,13 +9,13 @@ export default defineConfig({
     port: 3000,  
     open: true  ,
     proxy: {
-      "/api": {
-        target: "http://localhost:5000",
-        changeOrigin: true,
-        secure: false,
-        rewrite: (path) => path.replace(/^\/api/, ""),
+      '/api': {
+          target: 'https://jobhunt4u.in/public_html/api',
+          changeOrigin: true,
+          secure: false,
+          rewrite: (path) => path.replace(/^\/api/, ''),
       },
-    },
+  },
   }
 })
 

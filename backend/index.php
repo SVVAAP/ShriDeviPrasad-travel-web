@@ -1,79 +1,83 @@
 <?php
-require 'vendor/autoload.php';
-use Dotenv\Dotenv;
-use PDO;
-use PDOException;
-
-header("Access-Control-Allow-Origin: http://localhost:3000");
+header("Access-Control-Allow-Origin: *");
 header("Access-Control-Allow-Methods: GET, POST, OPTIONS");
 header("Access-Control-Allow-Headers: Content-Type");
+header("Content-Type: application/json");
 
-$dotenv = Dotenv::createImmutable(__DIR__);
-$dotenv->load();
+require 'db.php';
 
-$dsn = "mysql:host=" . $_ENV['DB_HOST'] . ";dbname=" . $_ENV['DB_NAME'] . ";port=" . $_ENV['DB_PORT'];
-$options = [
-    PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
-    PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
-];
-
-try {
-    $pdo = new PDO($dsn, $_ENV['DB_USER'], $_ENV['DB_PASSWORD'], $options);
-} catch (PDOException $e) {
-    die(json_encode(["error" => "Database connection failed"]));
-}
-
+// Extract endpoint correctly from URL
+$endpoint = isset($_GET['endpoint']) ? $_GET['endpoint'] : null;
 $requestMethod = $_SERVER["REQUEST_METHOD"];
-$endpoint = explode("/", trim($_SERVER["REQUEST_URI"], "/"))[0];
 $data = json_decode(file_get_contents("php://input"), true);
 
-function respond($data) {
+// Debugging: Check if endpoint is detected
+if (!$endpoint) {
+    echo json_encode(["error" => "No endpoint found"]);
+    exit;
+}
+
+// Function to send JSON response
+function respond($data, $statusCode = 200) {
+    http_response_code($statusCode);
     echo json_encode($data);
     exit;
 }
 
-if ($endpoint === "vehicles" && $requestMethod === "POST") {
-    $stmt = $pdo->prepare("INSERT INTO vehicles (title, description, imagesrc) VALUES (?, ?, ?)");
-    $stmt->execute([$data['title'], $data['description'], $data['imagesrc']]);
-    respond(["id" => $pdo->lastInsertId()] + $data);
-}
+try {
+    // Handle CORS Preflight (OPTIONS request)
+    if ($requestMethod === "OPTIONS") {
+        respond(["message" => "CORS Preflight OK"]);
+    }
 
-if ($endpoint === "vehicles" && $requestMethod === "GET") {
-    $stmt = $pdo->query("SELECT * FROM vehicles");
-    respond($stmt->fetchAll());
-}
+    // Create a new vehicle (POST /api/vehicles)
+    if ($endpoint === "vehicles" && $requestMethod === "POST") {
+        $stmt = $pdo->prepare("INSERT INTO vehicles (title, description, imagesrc) VALUES (?, ?, ?)");
+        $stmt->execute([$data['title'], $data['description'], $data['imagesrc']]);
+        respond(["id" => $pdo->lastInsertId()] + $data);
+    }
+    
+    if ($endpoint === "vehicles" && $requestMethod === "GET") {
+        $stmt = $pdo->query("SELECT * FROM vehicles");
+        respond($stmt->fetchAll());
+    }
+    
+    if ($endpoint === "services" && $requestMethod === "POST") {
+        $stmt = $pdo->prepare("INSERT INTO services (icon, title, description) VALUES (?, ?, ?)");
+        $stmt->execute([$data['icon'], $data['title'], $data['description']]);
+        respond(["id" => $pdo->lastInsertId()] + $data);
+    }
+    
+    if ($endpoint === "services" && $requestMethod === "GET") {
+        $stmt = $pdo->query("SELECT * FROM services");
+        respond($stmt->fetchAll());
+    }
+    
+    if ($endpoint === "package" && $requestMethod === "POST") {
+        $stmt = $pdo->prepare("INSERT INTO package (title, description, image) VALUES (?, ?, ?)");
+        $stmt->execute([$data['title'], $data['description'], $data['image']]);
+        respond(["id" => $pdo->lastInsertId()] + $data);
+    }
+    
+    if ($endpoint === "package" && $requestMethod === "GET") {
+        $stmt = $pdo->query("SELECT * FROM package");
+        respond($stmt->fetchAll());
+    }
+    
+    if ($endpoint === "booking" && $requestMethod === "POST") {
+        $stmt = $pdo->prepare("INSERT INTO booking (name, email, phone, date, booking_date, booking_time, package_id, vehicle_id, no_passengers) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
+        $stmt->execute([$data['name'], $data['email'], $data['phone'], $data['date'], $data['booking_date'], $data['booking_time'], $data['package_id'], $data['vehicle_id'], $data['no_passengers']]);
+        respond(["id" => $pdo->lastInsertId()] + $data);
+    }
+    
+    if ($endpoint === "booking" && $requestMethod === "GET") {
+        $stmt = $pdo->query("SELECT * FROM booking");
+        respond($stmt->fetchAll());
+    }
 
-if ($endpoint === "services" && $requestMethod === "POST") {
-    $stmt = $pdo->prepare("INSERT INTO services (icon, title, description) VALUES (?, ?, ?)");
-    $stmt->execute([$data['icon'], $data['title'], $data['description']]);
-    respond(["id" => $pdo->lastInsertId()] + $data);
+    // Default response for invalid endpoints
+    respond(["error" => "Invalid request"], 404);
+} catch (Exception $e) {
+    respond(["error" => "Server error", "details" => $e->getMessage()], 500);
 }
-
-if ($endpoint === "services" && $requestMethod === "GET") {
-    $stmt = $pdo->query("SELECT * FROM services");
-    respond($stmt->fetchAll());
-}
-
-if ($endpoint === "package" && $requestMethod === "POST") {
-    $stmt = $pdo->prepare("INSERT INTO package (title, description, image) VALUES (?, ?, ?)");
-    $stmt->execute([$data['title'], $data['description'], $data['image']]);
-    respond(["id" => $pdo->lastInsertId()] + $data);
-}
-
-if ($endpoint === "package" && $requestMethod === "GET") {
-    $stmt = $pdo->query("SELECT * FROM package");
-    respond($stmt->fetchAll());
-}
-
-if ($endpoint === "booking" && $requestMethod === "POST") {
-    $stmt = $pdo->prepare("INSERT INTO booking (name, email, phone, date, booking_date, booking_time, package_id, vehicle_id, no_passengers) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
-    $stmt->execute([$data['name'], $data['email'], $data['phone'], $data['date'], $data['booking_date'], $data['booking_time'], $data['package_id'], $data['vehicle_id'], $data['no_passengers']]);
-    respond(["id" => $pdo->lastInsertId()] + $data);
-}
-
-if ($endpoint === "booking" && $requestMethod === "GET") {
-    $stmt = $pdo->query("SELECT * FROM booking");
-    respond($stmt->fetchAll());
-}
-
-respond(["error" => "Invalid request"]);
+?>
