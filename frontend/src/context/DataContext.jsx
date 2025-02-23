@@ -4,7 +4,7 @@ import { createContext, useContext, useState, useEffect } from "react";
 const DataContext = createContext();
 
 // Backend API URL (Update with your actual domain)
-const API_URL = "/api/?endpoint="; // Vite will use proxy for backend requests
+const API_URL = "/apis/?endpoint="; // Vite will use proxy for backend requests
 
 export const DataProvider = ({ children }) => {
     const [vehicles, setVehicles] = useState([]);

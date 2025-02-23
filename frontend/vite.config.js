@@ -9,7 +9,7 @@ export default defineConfig({
     port: 3000,  
     open: true  ,
     proxy: {
-      '/api': {
+      '/apis': {
           target: 'https://jobhunt4u.in/public_html/api',
           changeOrigin: true,
           secure: false,
