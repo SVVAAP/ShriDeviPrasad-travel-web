@@ -3,8 +3,8 @@ import { createContext, useContext, useState, useEffect } from "react";
 // Create Context
 const DataContext = createContext();
 
-// Backend API URL
-const API_URL = "/api"; // Update with your backend URL
+// Backend API URL (Update with your actual domain)
+const API_URL = "https://jobhunt4u.in/public_html/api/?endpoint=";
 
 export const DataProvider = ({ children }) => {
     const [vehicles, setVehicles] = useState([]);
@@ -13,7 +13,7 @@ export const DataProvider = ({ children }) => {
 
     // Fetch Vehicles
     useEffect(() => {
-        fetch(`${API_URL}/vehicles`)
+        fetch(`${API_URL}vehicles`)
             .then((res) => res.json())
             .then((data) => setVehicles(data))
             .catch((err) => console.error("Error fetching vehicles:", err));
@@ -21,7 +21,7 @@ export const DataProvider = ({ children }) => {
 
     // Fetch Services
     useEffect(() => {
-        fetch(`${API_URL}/services`)
+        fetch(`${API_URL}services`)
             .then((res) => res.json())
             .then((data) => setServices(data))
             .catch((err) => console.error("Error fetching services:", err));
@@ -29,7 +29,7 @@ export const DataProvider = ({ children }) => {
 
     // Fetch Packages
     useEffect(() => {
-        fetch(`${API_URL}/package`)
+        fetch(`${API_URL}package`)
             .then((res) => res.json())
             .then((data) => setPackages(data))
             .catch((err) => console.error("Error fetching packages:", err));
