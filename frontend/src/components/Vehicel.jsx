@@ -6,7 +6,7 @@ import { useData } from '../context/DataContext';
 function About() {
   // Placeholder image URL
   const { vehicles } = useData();
-  console.log(vehicles);
+  //console.log(vehicles);
 
   return (
     <>
@@ -27,11 +27,11 @@ function About() {
                     className="w-full h-full object-cover"
                     src={vehicle.imageSrc}
                     alt={vehicle.title}
-                    loading="lazy"
+                    // loading="lazy"
                     // On load, the image will be swapped out with the actual one
-                    onError={(e) => e.target.src = placeholderImage}
+                   // onError={(e) => e.target.src = placeholderImage}
                     // Use placeholder image until the actual one is loaded
-                    onLoad={(e) => e.target.src = vehicle.imageSrc}
+                    //onLoad={(e) => e.target.src = vehicle.imageSrc}
                   />
                 </div>
                 <div className="text-center p-4">

@@ -64,11 +64,11 @@ function Packages() {
       <div className="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
         <div className="package-item">
           <div className="overflow-hidden">
-            <img
+            {/* <img
               className="img-fluid"
               src="https://backpackersunited.in/_next/image?url=https%3A%2F%2Fbpu-images-v1.s3.eu-north-1.amazonaws.com%2Fuploads%2F1721033522385_istockphoto-1270774245-1024x1024-transformed.jpeg&w=3840&q=100"
               alt="Hampi"
-            />
+            /> */}
           </div>
           <div className="d-flex border-bottom">
             <small className="flex-fill text-center border-end py-2">

@@ -4,7 +4,7 @@ import { createContext, useContext, useState, useEffect } from "react";
 const DataContext = createContext();
 
 // Backend API URL
-const API_URL = "http://localhost:5000"; // Update with your backend URL
+const API_URL = "/api"; // Update with your backend URL
 
 export const DataProvider = ({ children }) => {
     const [vehicles, setVehicles] = useState([]);
