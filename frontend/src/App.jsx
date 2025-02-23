@@ -23,6 +23,7 @@ import AdminSiteContent from "./components/Admin/EditSiteContent";
 import AdminBooking from "./components/Admin/Booking";
 import AdminProtectedRoute from "./components/Admin/AdminProtectedRoute";
 
+
 import "./index.css";
 import "./App.css";
 
@@ -34,7 +35,10 @@ export default function App() {
   return (
     <BrowserRouter>
       {/* Scroll to Top Button */}
-      <button onClick={scrollToTop} className="btn btn-lg btn-primary btn-lg-square back-to-top">
+      <button
+        onClick={scrollToTop}
+        className="btn btn-lg btn-primary btn-lg-square back-to-top"
+      >
         <i className="bi bi-arrow-up"></i>
       </button>
 
@@ -44,21 +48,20 @@ export default function App() {
 
         {/* ✅ Protected Admin Routes */}
         <Route
-          path="/admin/*"
+          path="/admin"
           element={
             <AdminProtectedRoute>
-              <Routes>
-                {" "}
-                {/* Wrap all admin routes inside Routes */}
-                <Route index element={<AdminPackages />} />
-                <Route path="packages" element={<AdminPackages />} />
-                <Route path="vehicles" element={<AdminVehicles />} />
-                <Route path="sitecontent" element={<AdminSiteContent />} />
-                <Route path="bookings" element={<AdminBooking />} />
-              </Routes>
+              <Admin />
             </AdminProtectedRoute>
           }
-        />
+        >
+          <Route index element={<AdminPackages />} />
+          <Route path="packages" element={<AdminPackages />} />
+          <Route path="vehicles" element={<AdminVehicles />} />
+          <Route path="sitecontent" element={<AdminSiteContent />} />
+          <Route path="Bookings" element={<AdminBooking />} />
+
+        </Route>
 
         {/* ✅ Public Routes (With Header & Footer) */}
         <Route
