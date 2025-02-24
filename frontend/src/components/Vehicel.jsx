@@ -5,7 +5,7 @@ import { useData } from "../context/DataContext";
 
 function About() {
   const { vehicles } = useData();
-  console.log(vehicles);
+ // console.log(vehicles);
 
   return (
     <>
