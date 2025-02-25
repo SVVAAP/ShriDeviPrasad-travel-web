@@ -57,12 +57,12 @@ const AdminDashboard = () => {
         <label className="block font-semibold">Title:</label>
         <input type="text" className="w-full border p-2" value={content.title} onChange={(e) => handleChange("title", "", e.target.value)} />
       </div>
-      
+
       <div className="mb-4">
         <label className="block font-semibold">Description:</label>
         <textarea className="w-full border p-2" value={content.description} onChange={(e) => handleChange("description", "", e.target.value)}></textarea>
       </div>
-      
+
       <div className="mb-4">
         <label className="block font-semibold">About Image URL:</label>
         <input type="text" className="w-full border p-2" value={content.about_image} onChange={(e) => handleChange("about_image", "", e.target.value)} />
@@ -70,7 +70,7 @@ const AdminDashboard = () => {
 
       {/* Services */}
       <h2 className="text-lg font-bold mt-6">Services</h2>
-      {content.services.map((service, index) => (
+      {content.services?.map((service, index) => (
         <div key={index} className="p-2 border mb-2">
           <input type="text" className="w-full border p-2 mb-2" placeholder="Title" value={service.title} onChange={(e) => handleServiceChange(index, "title", e.target.value)} />
           <textarea className="w-full border p-2 mb-2" placeholder="Description" value={service.description} onChange={(e) => handleServiceChange(index, "description", e.target.value)}></textarea>
@@ -78,6 +78,7 @@ const AdminDashboard = () => {
           <button className="bg-red-500 text-white px-3 py-1" onClick={() => removeService(index)}>Remove</button>
         </div>
       ))}
+
       <button className="bg-blue-500 text-white px-4 py-2" onClick={addService}>Add Service</button>
 
       {/* Destination */}
