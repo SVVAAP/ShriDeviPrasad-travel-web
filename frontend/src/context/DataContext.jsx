@@ -10,33 +10,48 @@ export const DataProvider = ({ children }) => {
     const [vehicles, setVehicles] = useState([]);
     const [services, setServices] = useState([]);
     const [packages, setPackages] = useState([]);
+    const [siteContent, setSiteContent] = useState({});
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(null);
 
-    // Fetch Vehicles
+    // Fetch function
+    const fetchData = async (endpoint, setState) => {
+        try {
+            const response = await fetch(`${API_URL}${endpoint}`);
+            const data = await response.json();
+            setState(data);
+        } catch (err) {
+            console.error(`Error fetching ${endpoint}:`, err);
+            setError(`Failed to load ${endpoint}`);
+        }
+    };
+
+    // Initial Fetch
     useEffect(() => {
-        fetch(`${API_URL}vehicles`)
-            .then((res) => res.json())
-            .then((data) => setVehicles(data))
-            .catch((err) => console.error("Error fetching vehicles:", err));
+        Promise.all([
+            fetchData("vehicles", setVehicles),
+            fetchData("services", setServices),
+            fetchData("package", setPackages),
+            fetchData("site_content", setSiteContent)
+        ]).finally(() => setLoading(false));
     }, []);
 
-    // Fetch Services
-    useEffect(() => {
-        fetch(`${API_URL}services`)
-            .then((res) => res.json())
-            .then((data) => setServices(data))
-            .catch((err) => console.error("Error fetching services:", err));
-    }, []);
-
-    // Fetch Packages
-    useEffect(() => {
-        fetch(`${API_URL}package`)
-            .then((res) => res.json())
-            .then((data) => setPackages(data))
-            .catch((err) => console.error("Error fetching packages:", err));
-    }, []);
+    // Refresh function
+    const refreshData = () => {
+        setLoading(true);
+        setError(null);
+        Promise.all([
+            fetchData("vehicles", setVehicles),
+            fetchData("services", setServices),
+            fetchData("package", setPackages),
+            fetchData("site_content", setSiteContent)
+        ]).finally(() => setLoading(false));
+    };
 
     return (
-        <DataContext.Provider value={{ vehicles, services, packages }}>
+        <DataContext.Provider value={{
+            vehicles, services, packages, siteContent, setSiteContent, loading, error, refreshData
+        }}>
             {children}
         </DataContext.Provider>
     );

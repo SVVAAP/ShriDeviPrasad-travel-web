@@ -6,16 +6,15 @@ export default defineConfig({
   
   plugins: [react()],
   server: {
-    port: 3000,  
+    port: 5000,  
     open: true  ,
     proxy: {
-      '/apis': {
-          target: 'https://jobhunt4u.in/public_html/api',
-          changeOrigin: true,
-          secure: false,
-          rewrite: (path) => path.replace(/^\/api/, ''),
+      "/api": {
+        target: "https://jobhunt4u.in/public_html/api",
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/api/, ""),
       },
-  },
+    },
   }
 })
 
