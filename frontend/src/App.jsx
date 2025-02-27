@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
@@ -28,19 +28,60 @@ import "./index.css";
 import "./App.css";
 
 export default function App() {
+  const [showScrollButton, setShowScrollButton] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 200) {
+        setShowScrollButton(true);
+      } else {
+        setShowScrollButton(false);
+      }
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
+  const openWhatsApp = () => {
+    window.open("https://wa.me/923000000000", "_blank");
+  }
+  const openCall = () => {
+    window.open("tel:+923000000000", "_blank");
+  }
+
   return (
     <BrowserRouter>
-      {/* Scroll to Top Button */}
-      <button
-        onClick={scrollToTop}
-        className="btn btn-lg btn-primary btn-lg-square back-to-top"
-      >
-        <i className="bi bi-arrow-up"></i>
-      </button>
+      <div className="fixed bottom-5 right-5 flex flex-col text-right gap-3 z-50">
+        {/* Scroll to Top Button */}
+        {showScrollButton && (
+          <button
+            onClick={scrollToTop}
+            className="w-12 h-12 flex items-center self-end justify-center rounded-full bg-blue-600 text-white shadow-lg transition-transform delay-500 ease-in-out hover:bg-blue-700 "
+          >
+            <i className="bi bi-arrow-up text-xl"></i>
+          </button>
+        )}
+
+        {/* WhatsApp Button */}
+        <div className="flex space-x-2">
+        <button
+          onClick={openCall}
+          className="w-12 h-12 flex items-center justify-center rounded-full bg-blue-500 text-white shadow-lg transition-all hover:bg-green-600"
+        >
+         <i className="fa-solid fa-phone"></i>
+        </button>
+        <button
+          onClick={openWhatsApp}
+          className="w-12 h-12 flex items-center justify-center rounded-full bg-green-500 text-white shadow-lg transition-all hover:bg-green-600"
+        >
+          <i className="fab fa-whatsapp text-2xl"></i>
+        </button>
+       
+        </div>
+      </div>
 
       <Routes>
         {/* ✅ Admin Authentication Routes */}
