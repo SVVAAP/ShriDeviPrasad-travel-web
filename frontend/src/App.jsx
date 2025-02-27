@@ -16,6 +16,7 @@ import Form from "./components/Form";
 
 // ✅ Import Admin Components
 import Admin from "./pages/Admin/Admin";
+import AdminHome from "./components/Admin/AdminHome";
 import AdminLogin from "./components/Admin/Login";
 import AdminPackages from "./components/Admin/Packages";
 import AdminVehicles from "./components/Admin/VehiclePackages";
@@ -96,7 +97,7 @@ export default function App() {
             </AdminProtectedRoute>
           }
         >
-          <Route index element={<AdminPackages />} />
+          <Route index element={<AdminHome />} />
           <Route path="packages" element={<AdminPackages />} />
           <Route path="vehicles" element={<AdminVehicles />} />
           <Route path="sitecontent" element={<AdminSiteContent />} />

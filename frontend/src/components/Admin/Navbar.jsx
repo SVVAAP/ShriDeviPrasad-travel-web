@@ -10,7 +10,7 @@ export default function AdminNavbar() {
           <NavLink to="/admin/bookings" className={({ isActive }) => isActive ? "underline" : ""}>Bookings</NavLink>
           <NavLink to="/admin/packages" className={({ isActive }) => isActive ? "underline" : ""}>Packages</NavLink>
           <NavLink to="/admin/vehicles" className={({ isActive }) => isActive ? "underline" : ""}>Vehicles</NavLink>
-          
+          <NavLink to="/admin/sitecontent" className={({ isActive }) => isActive ? "underline" : ""}>EditSite</NavLink>
           <button 
             onClick={() => {
               localStorage.removeItem("isAdminAuthenticated");
