@@ -1,5 +1,5 @@
 import React from 'react';
-import { useData } from '../context/DataContext';
+import { useData } from '../../context/DataContext';
 
 function Services() {
   // List of services
@@ -24,6 +24,20 @@ function Services() {
                 data-wow-delay={index+'s'}
               >
                 <div className="service-item rounded pt-3">
+                <div className="absolute top-2 right-2 z-10 flex space-x-4">
+          <button
+            onClick={handleEdit}
+            className="text-white bg-sky-500 p-2 rounded hover:bg-blue-600"
+          >
+            <i className="fa-solid fa-pen-to-square"></i>
+          </button>
+          <button
+            onClick={deleteService}
+            className="text-white bg-red-500 p-2 rounded hover:bg-red-600"
+          >
+            <i className="fa-solid fa-trash"></i>
+          </button>
+          </div>
                   <div className="p-4">
                     <i className={`fa fa-3x ${service.icon} text-primary mb-4`} />
                     <h5>{service.title}</h5>

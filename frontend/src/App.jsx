@@ -16,6 +16,7 @@ import Form from "./components/Form";
 
 // ✅ Import Admin Components
 import Admin from "./pages/Admin/Admin";
+import EditServices from "./components/Admin/EditServices";
 import AdminHome from "./components/Admin/AdminHome";
 import AdminLogin from "./components/Admin/Login";
 import AdminPackages from "./components/Admin/Packages";
@@ -70,7 +71,7 @@ export default function App() {
         <div className="flex space-x-2">
         <button
           onClick={openCall}
-          className="w-12 h-12 flex items-center justify-center rounded-full bg-blue-500 text-white shadow-lg transition-all hover:bg-green-600"
+          className="w-12 h-12 flex items-center justify-center rounded-full bg-blue-500 text-white shadow-lg transition-all hover:bg-blue-600"
         >
          <i className="fa-solid fa-phone"></i>
         </button>
@@ -101,6 +102,7 @@ export default function App() {
           <Route path="packages" element={<AdminPackages />} />
           <Route path="vehicles" element={<AdminVehicles />} />
           <Route path="sitecontent" element={<AdminSiteContent />} />
+          <Route path="services" element={<EditServices />} />
           <Route path="Bookings" element={<AdminBooking />} />
 
         </Route>

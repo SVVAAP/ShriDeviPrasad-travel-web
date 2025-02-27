@@ -1,5 +1,4 @@
 import { useState } from "react";
-import axios from "axios";
 import Card from "./Card2";
 import { useData } from "../../context/DataContext";
 
@@ -8,7 +7,7 @@ const UploadVehicle = () => {
   const [description, setDescription] = useState("");
   const [image, setImage] = useState(null);
   const [message, setMessage] = useState("");
-  const { vehicles } = useData();
+  const { vehicles,addData } = useData();
   const [isOpen, setIsOpen] = useState(false);
 
   const handleImageChange = (event) => {
@@ -23,25 +22,17 @@ const UploadVehicle = () => {
       return;
     }
 
-    const formData = new FormData();
-    formData.append("title", title);
-    formData.append("description", description);
-    formData.append("image", image);
-
-    try {
-      const response = await axios.post("https://jobhunt4u.in/public_html/api/?endpoint=vehicle", formData, {
-        headers: {
-          "Content-Type": "multipart/form-data",
-        },
-      });
-
-      setMessage(response.data.message);
+    const newVehicle = {
+      title: title,
+      description: description,
+      imagesrc: image
+  }
+    await addData("vehicles", newVehicle);
+      //setMessage(response.data.message);
       setTitle("");
       setDescription("");
       setImage(null);
-    } catch (error) {
-      setMessage("Error uploading vehicle.");
-    }
+  
   };
 
   return (
