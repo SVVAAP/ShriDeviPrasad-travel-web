@@ -12,7 +12,6 @@ import Team from "./pages/Team";
 import Testimonial from "./pages/Testimonial";
 import Error from "./pages/Error";
 import Contact from "./pages/Contact";
-import Form from "./components/Form";
 
 // ✅ Import Admin Components
 import Admin from "./pages/Admin/Admin";
