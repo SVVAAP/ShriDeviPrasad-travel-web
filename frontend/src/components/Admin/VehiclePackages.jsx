@@ -7,7 +7,7 @@ const UploadVehicle = () => {
   const [description, setDescription] = useState("");
   const [image, setImage] = useState(null);
   const [message, setMessage] = useState("");
-  const { vehicles,addData } = useData();
+  const { vehicles,addData,uploadImage} = useData();
   const [isOpen, setIsOpen] = useState(false);
 
   const handleImageChange = (event) => {
@@ -21,11 +21,11 @@ const UploadVehicle = () => {
       setMessage("Please fill in all fields.");
       return;
     }
-
+    let imageUrl=uploadImage(image);
     const newVehicle = {
       title: title,
       description: description,
-      imagesrc: image
+      imagesrc: imageUrl
   }
     await addData("vehicles", newVehicle);
       //setMessage(response.data.message);

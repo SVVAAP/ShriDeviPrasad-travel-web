@@ -4,10 +4,9 @@ import { useData } from "../../context/DataContext";
 
 // API Endpoints
 const API_URL = "/api/?endpoint=site_content";
-const UPLOAD_URL = "/api/upload.php"; // New API for image upload
 
 const AdminDashboard = () => {
-  const { siteContent, setSiteContent } = useData(); // Using Context API
+  const { siteContent, setSiteContent ,handleFileUpload} = useData(); // Using Context API
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
@@ -33,29 +32,6 @@ const AdminDashboard = () => {
     }));
   };
 
-  const handleFileUpload = async (e, key) => {
-    const file = e.target.files[0];
-    if (!file) return;
-
-    const formData = new FormData();
-    formData.append("image", file);
-
-    try {
-      const res = await axios.post(UPLOAD_URL, formData, {
-        headers: { "Content-Type": "multipart/form-data" },
-      });
-
-      if (res.data.success) {
-        const imageUrl = res.data.image_url; // Image URL from response
-        handleChange(key, imageUrl);
-      } else {
-        alert("Image upload failed!");
-      }
-    } catch (error) {
-      console.error("Error uploading image:", error);
-      alert("Failed to upload image");
-    }
-  };
 
   const handleSubmit = async () => {
     try {
@@ -91,7 +67,7 @@ const AdminDashboard = () => {
           type="file"
           className="w-full border p-2"
           accept="image/*"
-          onChange={(e) => handleFileUpload(e, "about_image")}
+          onChange={(e) => handleFileUpload(e, "about_image", handleChange)}
         />
         {siteContent?.about_image && (
           <img
@@ -107,7 +83,7 @@ const AdminDashboard = () => {
         type="file"
         className="w-full border p-2 mb-2"
         accept="image/*"
-        onChange={(e) => handleFileUpload(e, "hero_image")}
+        onChange={(e) => handleFileUpload(e, "hero_image",handleChange)}
       />
       {siteContent?.hero_image && (
         <img
@@ -122,7 +98,7 @@ const AdminDashboard = () => {
         type="file"
         className="w-full border p-2 mb-2"
         accept="image/*"
-        onChange={(e) => handleFileUpload(e, "destination_img_url")}
+        onChange={(e) => handleFileUpload(e, "destination_img_url",handleChange)}
       />
       {siteContent?.destination_img_url && (
         <img

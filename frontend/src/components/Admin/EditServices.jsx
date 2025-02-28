@@ -4,6 +4,14 @@ import { useData } from '../../context/DataContext';
 function Services() {
   // List of services
   const {services} = useData();
+  
+  const handleEdit=()=>{
+
+  }
+
+  const deleteService=()=>{
+    
+  }
 
   return (
     <div id="services">

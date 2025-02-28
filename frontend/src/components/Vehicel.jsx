@@ -22,7 +22,7 @@ function About() {
           {vehicles && vehicles.length > 0 ? (
             vehicles.map((vehicle, index) => (
               <div key={index} className="team-item">
-                <Link to="/booking">
+                <Link to="/vehicel-booking">
                   <div className="overflow-hidden rounded-lg shadow-lg">
                     <img
                       className="w-full h-full object-cover"

@@ -28,6 +28,7 @@ import AdminProtectedRoute from "./components/Admin/AdminProtectedRoute";
 
 import "./index.css";
 import "./App.css";
+import VehicleBookingForm from "./components/VehicleBookingForm";
 
 export default function App() {
   const [showScrollButton, setShowScrollButton] = useState(false);
@@ -48,10 +49,10 @@ export default function App() {
   };
 
   const openWhatsApp = () => {
-    window.open("https://wa.me/923000000000", "_blank");
+    window.open("https://wa.me/919980721592", "_blank");
   }
   const openCall = () => {
-    window.open("tel:+923000000000", "_blank");
+    window.open("tel:+919980721592", "_blank");
   }
 
   return (
@@ -124,7 +125,7 @@ export default function App() {
                 <Route path="/testimonial" element={<Testimonial />} />
                 <Route path="/error" element={<Error />} />
                 <Route path="/contact" element={<Contact />} />
-                <Route path="/vehicel-booking" element={<Form />} />
+                <Route path="/vehicel-booking" element={<VehicleBookingForm/>} />
               </Routes>
               <Footer />
             </>

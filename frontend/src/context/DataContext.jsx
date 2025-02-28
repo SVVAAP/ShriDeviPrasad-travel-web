@@ -1,3 +1,4 @@
+import axios from "axios";
 import { createContext, useContext, useState, useEffect } from "react";
 
 // Create Context
@@ -5,6 +6,7 @@ const DataContext = createContext();
 
 // Backend API URL (Update with your actual domain)
 const API_URL = "/apis/?endpoint="; // Vite will use proxy for backend requests
+const UPLOAD_URL = "/api/upload.php"; // New API for image upload
 
 export const DataProvider = ({ children }) => {
     const [vehicles, setVehicles] = useState([]);
@@ -66,6 +68,52 @@ export const DataProvider = ({ children }) => {
         }
     };
 
+    const handleFileUpload = async (e, key, handleChange) => {
+        const file = e.target.files[0];
+        if (!file) return;
+    
+        const formData = new FormData();
+        formData.append("image", file);
+    
+        try {
+          const res = await axios.post(UPLOAD_URL, formData, {
+            headers: { "Content-Type": "multipart/form-data" },
+          });
+    
+          if (res.data.success) {
+            const imageUrl = res.data.image_url; // Image URL from response
+            handleChange(key, imageUrl);
+          } else {
+            alert("Image upload failed!");
+          }
+        } catch (error) {
+          console.error("Error uploading image:", error);
+          alert("Failed to upload image");
+        }
+      };
+
+      const uploadImage = async (file) => {
+        if (!file) return null;
+      
+        const formData = new FormData();
+        formData.append("image", file);
+      
+        try {
+          const res = await axios.post(UPLOAD_URL, formData, {
+            headers: { "Content-Type": "multipart/form-data" },
+          });
+      
+          if (res.data.success) {
+            return res.data.image_url; // Return image URL from response
+          } else {
+            throw new Error("Image upload failed!");
+          }
+        } catch (error) {
+          console.error("Error uploading image:", error);
+          throw new Error("Failed to upload image");
+        }
+      };
+
     // Update existing data
     const updateData = async (endpoint, id, updatedData) => {
         try {
@@ -103,7 +151,7 @@ export const DataProvider = ({ children }) => {
     return (
         <DataContext.Provider value={{
             vehicles, services, packages, siteContent, setSiteContent, loading, error, refreshData, vehicleBooking, booking,
-            addData, updateData, deleteData
+            addData, updateData, deleteData ,handleFileUpload,uploadImage
         }}>
             {children}
         </DataContext.Provider>

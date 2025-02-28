@@ -8,8 +8,10 @@ export default function AdminLogin() {
 
   const handleLogin = (e) => {
     e.preventDefault();
-
-    if (username === "admin@1234" && password === "#travel@admin") {
+    const adminUsername = process.env.REACT_APP_ADMIN_USERNAME;
+    const adminPassword = process.env.REACT_APP_ADMIN_PASSWORD;
+  
+    if (username === adminUsername && password === adminPassword) {
       localStorage.setItem("isAdminAuthenticated", "true"); // Store login state
       navigate("/admin"); // Redirect to Admin Dashboard
     } else {
