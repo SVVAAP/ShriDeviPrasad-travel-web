@@ -8,7 +8,7 @@ node_modules/
 .pnp.js
 /backend/node_modules
 /backend/.env
-
+/frontend/dist.zip
 # testing
 /coverage
 
